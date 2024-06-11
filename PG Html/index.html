@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>PlayGround</title>
+</head>
+<body>
+    <div id="app">
+        <h1>PlayGround</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>MaxChildren</th>
+                    <th>MinChildAge</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="pg in PlayGrounds" :key="pg.id">
+                    <td>{{pg.id}}</td>
+                    <td>{{pg.name}}</td>
+                    <td>{{pg.maxChildren}}</td>
+                    <td>{{pg.minChildAge}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="number" id="pgId" v-model="PlayGround.Id" placeholder="Id">
+        <input type="text" id="pgName" v-model="PlayGround.Name" placeholder="Name">
+        <input type="number" id="pgMaxChildren" v-model="PlayGround.MaxChildren" placeholder="MaxChildren">
+        <input type="number" id="pgMinChildAge" v-model="PlayGround.MinChildAge" placeholder="MinChildAge">
+        <button class="btn btn-primary" @click="addPG">Add PlayGround</button>
+    </div>
+    <script src="index.js"></script>
+
+</body>
+</html>
